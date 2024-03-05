@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla Software</title>
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/estilo.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header"></div>
+    <main>
+        <section>
+            <h1>Taller Final</h1>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6" id="enunciado">
+                    <h5>Enunciado del ejercicio</h5>
+                    <article id="enunciado1">
+                        <p>
+                        <ul>
+                            <li>
+                                Definir una variable de tipo objeto llamada artículo, donde sus atributos sean: nombre,
+                                marca, precio_compra, precio_venta, stock, también debe existir un arreglo llamado
+                                bodega y este debe almacenar los artículos, los datos de los artículos deben ser
+                                capturados por un formulario que debe estar validado, el precio de venta se calcula
+                                teniendo en cuenta que debe ser el 30% por encima del valor de compra, llenar el arreglo
+                                bodega con 5 artículos, MOSTRAR ESTOS ARTICULOS EN PANTALLA EN UNA TABLA
+                            </li>
+                            <br>
+                            <li>
+                                Definir una variable de tipo objeto llamada vendedor, donde sus atributos sean: nombre,
+                                cedula, email, celular, también debe existir un arreglo llamado empleados y est debe
+                                almacenar los vendedores, los datos de los vendedores deben ser capturados por n
+                                formulario que debe estar validado, llenar el arreglo empleados con 5 vendedores,
+                                MOSTRAR ESTOS ARTICULOS EN PANTALLA EN UNA TABLA
+                            </li>
+                            <br>
+                            <li>
+                                Definir una variable de tipo objeto llamada venta y debe contener los siguientes
+                                atributos:
+                                fecha, producto, cantidad, subtotal, iva, total y vendedor, los productos y vendedores
+                                se
+                                deben de escoger de arreglo del anterior ejercicio, y la venta se debe capturar con un
+                                formulario, el subtotal, iva y total deben ser calculados, llenar un arreglo llamado
+                                r_ventas
+                                con las ventas realizadas. MOSTRAR ESTOS ARTICULOS EN PANTALLA EN UNA TABLA
+                            </li>
+                        </ul>
+                        </p>
+                        <h6>
+                            Datos del producto
+                        </h6>
+                        <form>
+                            <select id="producto" class="form-control form-select">
+                                <option value="" label="">Eliga una opcion</option>
+                                <option value="Camisa" label="Camisa">Camisa</option>
+                                <option value="Pantalon" label="Pantalon">Pantalon</option>
+                                <option value="Zapatos" label="Zapatos">Zapatos</option>
+                                <option value="Tangas" label="Tangas">Tangas</option>
+                                <option value="Medias" label="Medias">Medias</option>
+                            </select>
+                            <span style="color: red;" id="error1">Ingrese el producto</span>
+                            <input type="text" name="marca" id="marca" placeholder="Ingrese marca" class="form-control">
+                            <span style="color: red;" id="error2">Ingrese la marca</span>
+                            <input type="number" name="precio_compra" id="precio_compra" placeholder="Ingrese costo"
+                                class="form-control">
+                            <span style="color: red;" id="error3">Ingrese el costo</span>
+                            <input type="number" name="stock" id="stock" placeholder="Ingrese stock"
+                                class="form-control">
+                            <span style="color: red;" id="error4">Ingrese stock</span> <br>
+                            <input type="button" class="btn btn-primary" value="Ingresar productos"
+                                onclick="articulos()">
+                        </form>
+
+                        <form>
+                            <br>
+                            <h6>
+                                Datos de Vendedor
+                            </h6>
+                            <select id="vendedor" class="form-control form-select">
+                                <option value="" label="">Eliga una opcion</option>
+                                <option value="Raul Aguado" label="Raul Aguado">Raul Aguado</option>
+                                <option value="Jhon Montes" label="Jhon Montes">Jhon Montes</option>
+                                <option value="Elkin Gutierrez" label="Elkin Gutierrez">Elkin Gutierrez</option>
+                                <option value="Alexis Medina" label="Alexis Medina">Alexis Medina</option>
+                                <option value="Andres Parra" label="Andres Parra">Andres Parra</option>
+                            </select>
+                            <span style="color: red;" id="error5">Falta Vendedor</span>
+                            <input type="number" name="cedula" id="cedula" placeholder="Ingrese Cedula"
+                                class="form-control">
+                            <span style="color: red;" id="error6">Falta Cedula</span>
+                            <input type="email" name="email" id="email" placeholder="Ingrese Email"
+                                class="form-control">
+                            <span style="color: red;" id="error7">Falta Email</span>
+                            <input type="tel" name="telefono" id="telefono" placeholder="Ingrese Numero Telefono"
+                                class="form-control">
+                            <span style="color: red;" id="error8">Falta Telefono</span>
+                            <input type="button" class="btn btn-primary" value="Ingresar vendedores"
+                                onclick="empleado()">
+                        </form>
+
+                        <form>
+                            <br>
+                            <h6>
+                                Registro de ventas
+                            </h6>
+                            <input type="date" id="fechacompra" placeholder="Ingrese fecha de compra"
+                                class="form-control">
+                            <span style="color: red;" id="error9">Ingrese el producto</span>
+                            <select id="productov" class="form-control form-select">
+                                <option value="" label="">Eliga una opcion</option>
+                                <option value="Camisa" label="Camisa">Camisa</option>
+                                <option value="Pantalon" label="Pantalon">Pantalon</option>
+                                <option value="Zapatos" label="Zapatos">Zapatos</option>
+                                <option value="Tangas" label="Tangas">Tangas</option>
+                                <option value="Medias" label="Medias">Medias</option>
+                            </select>
+                            <span style="color: red;" id="error10">Ingrese el producto</span>
+                            <input type="number" name="cantidad" id="cantidad" placeholder="Ingrese cantidad"
+                                class="form-control">
+                            <span style="color: red;" id="error11">Ingrese el producto</span>
+                            <select id="vendedores" class="form-control form-select">
+                                <option value="" label="">Eliga una opcion</option>
+                                <option value="Raul Aguado" label="Raul Aguado">Raul Aguado</option>
+                                <option value="Jhon Montes" label="Jhon Montes">Jhon Montes</option>
+                                <option value="Elkin Gutierrez" label="Elkin Gutierrez">Elkin Gutierrez</option>
+                                <option value="Alexis Medina" label="Alexis Medina">Alexis Medina</option>
+                                <option value="Andres Parra" label="Andres Parra">Andres Parra</option>
+                            </select>
+                            <span style="color: red;" id="error12">Ingrese el producto</span>
+                        </form>
+                        <input type="button" class="btn btn-primary" value="Registrar venta" onclick="ventas()"><br>
+
+                    </article>
+
+                    <article id="enunciado2">
+                        <p>
+
+                        </p>
+                    </article>
+                    <article id="enunciado3">
+                        <p>
+
+                        </p>
+                    </article>
+                    <article id="enunciado4">
+                        <p>
+
+                        </p>
+                    </article>
+                    <article id="enunciado5">
+                        <p>
+
+                        </p>
+                    </article>
+                    <article id="enunciado6">
+                        <p>
+
+                        </p>
+
+                    </article>
+                    <article id="enunciado7">
+                        <p>
+
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="col-lg-6" id="resultados">
+                    <h5>Resultados del programa</h5>
+                    <div id="resultado"></div>
+                    <article id="tablaarticulos">
+                        <table>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Marca</th>
+                                <th>Precio Compra</th>
+                                <th>Precio venta</th>
+                                <th>Stock</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <tbody id="datos"></tbody>
+                            </tr>
+                        </table>
+
+
+                    </article>
+
+                    <article id="tablaempleados">
+                        <table>
+                            <tr>
+                                <th>Vendedor</th>
+                                <th>Cedula</th>
+                                <th>Email</th>
+                                <th>Celular</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <tbody id="datosempleados"></tbody>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article id="tablaventas">
+                        <table>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>IVA</th>
+                                <th>Total</th>
+                                <th>Empleado</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <tbody id="datosventas"></tbody>
+                            </tr>
+                        </table>
+                    </article>
+
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+    </main>
+
+</body>
+
+<script src="js/ejercicios.js"></script>
+
+<script src="js/estructura/header.js"></script>
+<!-- bootstrap -->
+<script src="js/bootstrap/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+    crossorigin="anonymous"></script>
+
+</html>

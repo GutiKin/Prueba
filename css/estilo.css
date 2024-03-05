@@ -1,0 +1,89 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+header{
+    background-color: #212529;
+    color: white;
+    padding: 10px;
+    line-height: 45px;
+}
+
+#logo{
+    font-size: 23px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+header a{
+    color: white;
+}
+
+main{
+    margin-top: 5px;
+    padding: 25px;
+}
+
+h1{
+    font-size: 20px;
+    font-style: oblique;
+}
+
+#enunciado1, #enunciado2, #enunciado3, #enunciado4, #enunciado5, #enunciado6, #enunciado7{
+    display: none;
+}
+
+#tablaarticulos, #tablaempleados,#tablaventas{
+    display: none;
+}
+
+#enunciado{
+    background-color: #71e7d8;
+    color: #212529;
+    padding: 20px;
+}
+
+#resultados{
+    background-color: #85f164;
+    color: rgb(10, 10, 10);
+    padding: 20px;
+}
+
+input{
+    margin-top: 10px;
+    width: 100%;
+
+}
+
+#error1, #error2, #error3, #error4 , #error5 , #error6, #error7, #error8, #error9 , #error10, #error11, #error12{
+    display: none;
+
+}
+
+
+table {
+    width: 100%;  
+    margin-top: 25px;
+    border: 1px solid #000; 
+}
+      
+    
+
+
+tr, th {
+    text-align: center;    
+    border-collapse:collapse;
+    border: 1px solid #000;
+    border-spacing: 0;
+   
+ }
+
+ tr, td{
+    text-align: left;
+    
+    padding: 0.2em;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    border-spacing: 0;  
+ }
